@@ -114,9 +114,9 @@ The app uses react-google-maps and foursquare apis.
 Easy set-up:
 - create a .env file in the root directory.
 - copy and paste your credentials in the .env file: 
-REACT_APP_ID=your_4_square_id
-REACT_APP_SECRET=your_4_square_secret
-REACT_APP_MAP_KEY=your_g_map_key
+- REACT_APP_ID=your_4_square_id
+- REACT_APP_SECRET=your_4_square_secret
+- REACT_APP_MAP_KEY=your_g_map_key
 - The create-react-app tool uses REACT_APP_ to identify these variables. If you don't start your API key name with it, create-react-app won't see it.
 
 
