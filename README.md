@@ -6,7 +6,7 @@ Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
 ## Table of Contents
-- [Adding api keys](#adding api keys)
+- [Adding API Keys](#adding-api-keys)
 - [Updating to New Releases](#updating-to-new-releases)
 - [Sending Feedback](#sending-feedback)
 - [Folder Structure](#folder-structure)
@@ -108,7 +108,7 @@ You can find the most recent version of this guide [here](https://github.com/fac
 - [Something Missing?](#something-missing)
 
 
-## Adding api keys
+## Adding API Keys
 
 The app uses react-google-maps and foursquare apis.
 Easy set-up:
