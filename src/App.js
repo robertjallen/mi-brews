@@ -41,14 +41,11 @@ class App extends Component {
     this.setCenter(marker);
     marker.isOpen = true;
     this.setState({markers: Object.assign(this.state.markers,marker)})
-    const venue = this.state.venues.find(venue => venue.id === marker.id);
-
-   
-
-
+    const venue = this.state.venues.find(venue => venue.id === marker.id)
     // getVenueDetails(marker.id)
     SquareApi.getVenueDetails(marker.id) 
     .then(res => {
+      console.log(res.response);
       const newVenue = Object.assign(venue, res.response.venue);
       this.setState({venues: Object.assign(this.state.venues, newVenue)});
       // console.log(newVenue);
@@ -73,7 +70,7 @@ class App extends Component {
         near: 'Brighton, MI',
         radius: 500000,
         query: 'brewery',
-        limit: 10
+        limit: 5
   }
 
   fetch(
