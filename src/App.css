@@ -50,37 +50,54 @@
 }
 
 div.infoBox {
-     margin-left: -25vw;
+     background: #fff;
+     margin-left: -33vw;
      left: 0 !important;
-     width: 50%;
+     width: 66%;
      border-radius: 3px;
      box-shadow: 3px 3px 13px rgba(0, 0, 0, 0.5);
 }
 
 .info-container {
+     display: flex;
+     flex-direction: row;
      background: #fff;
 }
 
 .info-div {
      display: flex;
-     flex-direction: row;
+     flex-direction: column;
+     background: #fff;
+     font-size: 1rem;
+     margin: 0 auto;
+     text-align: center;
 }
 
 .info-image {
-     height: 15vh;
+     margin-right: 15px;
+     height: 100%;
      width: auto;
 }
 
 .info-name {
-     text-align: center;
-     margin: 0 auto;
-     margin-top: auto;
-     margin-bottom: auto;
-     font-size: 1rem;
-     letter-spacing: 1.3px;
+     letter-spacing: 1.2px;
      text-transform: capitalize;
      color: chocolate;
      font-weight: bolder;
+}
+
+.info-url {
+     font-size: .75rem;
+     color: #666;
+     border: 1px solid #666;
+     padding: .25rem;
+     text-decoration: none;
+}
+
+.info-url:hover {
+     border: 1px solid goldenrod;
+     color: #fff;
+     background: chocolate;
 }
 
 .sidebar {
@@ -112,7 +129,6 @@ div.infoBox {
 .listItem {
      background: goldenrod;
      font-size: 1rem;
-     border-bottom: 1px solid #e0e0e0;
      border-radius: 5px;
      box-shadow: 3px 3px 13px rgba(0, 0, 0, 0.5);
      margin-bottom: 1rem;
@@ -130,14 +146,12 @@ div.infoBox {
 .details {
      color: #666;
      margin: 0;
-     padding: .9rem;
      width: 100%;
      background: #fff;
 }
 
 .listItem p {
-     letter-spacing: 1px;
-     margin: .5rem 0;
+     margin: .333rem 0;
      width: 100%;
 }
 
@@ -146,6 +160,11 @@ div.infoBox {
      text-transform: capitalize;
      color: chocolate;
      font-weight: bolder;
+}
+
+.details-address {
+     font-size: .666rem;
+     line-height: 12px;
 }
 
 .App-logo {
@@ -240,5 +259,46 @@ div.infoBox {
      }
      .details {
           padding: .75rem;
+     }
+}
+
+@media screen and (max-width: 400px) {
+     div.infoBox {
+          background: #fff;
+          margin-left: -33vw;
+          left: 0 !important;
+          height: auto;
+          width: 66%;
+          border-radius: 3px;
+          box-shadow: 3px 3px 13px rgba(0, 0, 0, 0.5);
+     }
+     .info-container {
+          display: flex;
+          flex-direction: row;
+          background: #fff;
+     }
+     .info-div {
+          display: flex;
+          flex-direction: column;
+          background: #fff;
+          font-size: .666rem;
+          margin: 0 auto;
+          text-align: center;
+     }
+     .info-image {
+          height: 80px;
+          width: auto;
+     }
+     .info-name {
+          letter-spacing: 1px;
+          text-transform: capitalize;
+          color: chocolate;
+          font-weight: bold;
+     }
+     .info-url {
+          color: #666;
+          border: 1px solid #666;
+          padding: .333rem;
+          text-decoration: none;
      }
 }

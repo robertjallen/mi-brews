@@ -51,8 +51,10 @@ export default class SideBar extends Component {
       <input 
         type={'search'}
         id={'search'} 
-        placeholder={'search'}
+        placeholder={'Search'}
         onChange={this.handleChange}
+        aria-labelledby={'search'}
+        tabIndex={0}
         />
       <VenueList 
         {...this.props}

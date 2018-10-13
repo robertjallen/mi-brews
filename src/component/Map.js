@@ -4,7 +4,6 @@ import { withScriptjs,
   withGoogleMap,
   GoogleMap,
   Marker,
-  // InfoWindow 
 } from "react-google-maps";
 import InfoBox from "react-google-maps/lib/components/addons/InfoBox";
 
@@ -19,6 +18,7 @@ const MyMapComponent = withScriptjs(
     zoom={props.zoom}
     defaultCenter={{ lat: 30.397, lng: -97.644 }}
     center={props.center}
+    tabIndex={-1}
     >
 
     {props.markers &&
@@ -35,23 +35,15 @@ const MyMapComponent = withScriptjs(
         >
           {marker.isOpen && 
           venueInfo.bestPhoto && (
-            // <div>{venueInfo.name}</div>
-
-            // <InfoBox>
-            //     <img
-            //       src={`${venueInfo.bestPhoto.prefix}200x200${venueInfo.bestPhoto.suffix}`}
-            //       alt={venueInfo.name} />
-            //     <p>{venueInfo.name}</p>
-            // </InfoBox>
-
             <InfoBox>
               <React.Fragment>
                 <div className="info-container">
+                  <img className="info-image"
+                    src={`${venueInfo.bestPhoto.prefix}100x100${venueInfo.bestPhoto.suffix}`}
+                    alt={venueInfo.name} />
                   <div className='info-div'>
-                    <img className="info-image"
-                      src={`${venueInfo.bestPhoto.prefix}100x100${venueInfo.bestPhoto.suffix}`}
-                      alt={venueInfo.name} />
                     <p className="info-name">{venueInfo.name}</p>
+                    <a aria-labelledby={'more info'} className="info-url" href={venueInfo.shortUrl}>More Info</a>
                   </div>
                 </div>
               </React.Fragment>
