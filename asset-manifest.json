@@ -1,13 +1,13 @@
 {
-  "main.css": "/mi-brews/static/css/main.6a5371e6.chunk.css",
-  "main.js": "/mi-brews/static/js/main.b433c7ab.chunk.js",
-  "main.js.map": "/mi-brews/static/js/main.b433c7ab.chunk.js.map",
+  "main.css": "/mi-brews/static/css/main.279dd888.chunk.css",
+  "main.js": "/mi-brews/static/js/main.95a9ad82.chunk.js",
+  "main.js.map": "/mi-brews/static/js/main.95a9ad82.chunk.js.map",
   "static/js/1.3c275ced.chunk.js": "/mi-brews/static/js/1.3c275ced.chunk.js",
   "static/js/1.3c275ced.chunk.js.map": "/mi-brews/static/js/1.3c275ced.chunk.js.map",
   "runtime~main.js": "/mi-brews/static/js/runtime~main.7af85e8c.js",
   "runtime~main.js.map": "/mi-brews/static/js/runtime~main.7af85e8c.js.map",
-  "static/css/main.6a5371e6.chunk.css.map": "/mi-brews/static/css/main.6a5371e6.chunk.css.map",
+  "static/css/main.279dd888.chunk.css.map": "/mi-brews/static/css/main.279dd888.chunk.css.map",
   "index.html": "/mi-brews/index.html",
-  "precache-manifest.80a47e2ebf18e1aa2eefc7f7103942a2.js": "/mi-brews/precache-manifest.80a47e2ebf18e1aa2eefc7f7103942a2.js",
+  "precache-manifest.1a7bdc99e294ea0ddb0f672a3c573a72.js": "/mi-brews/precache-manifest.1a7bdc99e294ea0ddb0f672a3c573a72.js",
   "service-worker.js": "/mi-brews/service-worker.js"
 }
