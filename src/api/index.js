@@ -1,4 +1,9 @@
 //credit: for squareApi https://www.youtube.com/watch?v=Dj5hzKBxCBI&list=PL4rQq4MQP1crXuPtruu_eijgOUUXhcUCP&index=3
+// const env = from './env'
+const REACT_APP_ID = process.env.REACT_APP_ID;
+const REACT_APP_SECRET = process.env.REACT_APP_SECRET;
+console.log(REACT_APP_ID);
+console.log(REACT_APP_SECRET);
 
 class Helper {
   static baseURL(){
@@ -6,8 +11,8 @@ class Helper {
   }
   static auth(){
     const keys = {
-      client_id: 'L0ZK3VLIPIYJBRFHR2D421ZUPVBOEBUPMR5PQFKWDMT1UQJA',
-      client_secret: 'HH1FKHUKXA4LNKNEGZ0PKSO3OJTJHOQS04ZWVKN3LRSB3ENG',
+      client_id: REACT_APP_ID,
+      client_secret: REACT_APP_SECRET,
       v: '20180323'
     };
     return Object.keys(keys)

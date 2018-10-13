@@ -5,6 +5,9 @@ import SquareApi from './api';
 import SideBar from './component/SideBar';
 import Hero from './component/Hero';
 
+const REACT_APP_ID = process.env.REACT_APP_ID;
+const REACT_APP_SECRET = process.env.REACT_APP_SECRET;
+
 class App extends Component {
 
   constructor(){
@@ -64,8 +67,8 @@ class App extends Component {
   searchVenues = (version) => {
     const endPoint = "https://api.foursquare.com/v2/venues/search?"
     const parameters = {
-        client_id: "L0ZK3VLIPIYJBRFHR2D421ZUPVBOEBUPMR5PQFKWDMT1UQJA",
-        client_secret: "HH1FKHUKXA4LNKNEGZ0PKSO3OJTJHOQS04ZWVKN3LRSB3ENG",
+        client_id: REACT_APP_ID,
+        client_secret: REACT_APP_SECRET,
         v: version,
         near: 'Brighton, MI',
         radius: 500000,

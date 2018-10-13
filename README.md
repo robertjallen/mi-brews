@@ -6,8 +6,7 @@ Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
 ## Table of Contents
-- [git clone or fork repo]
-- [npm install]
+- [Adding api keys](#adding api keys)
 - [Updating to New Releases](#updating-to-new-releases)
 - [Sending Feedback](#sending-feedback)
 - [Folder Structure](#folder-structure)
@@ -107,6 +106,19 @@ You can find the most recent version of this guide [here](https://github.com/fac
   - [Moment.js locales are missing](#momentjs-locales-are-missing)
 - [Alternatives to Ejecting](#alternatives-to-ejecting)
 - [Something Missing?](#something-missing)
+
+
+## Adding api keys
+
+The app uses react-google-maps and foursquare apis.
+Easy set-up:
+- create a .env file in the root directory.
+- copy and paste your credentials in the .env file: 
+REACT_APP_ID=your_4_square_id
+REACT_APP_SECRET=your_4_square_secret
+REACT_APP_MAP_KEY=your_g_map_key
+- The create-react-app tool uses REACT_APP_ to identify these variables. If you don't start your API key name with it, create-react-app won't see it.
+
 
 ## Updating to New Releases
 

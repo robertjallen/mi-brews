@@ -8,6 +8,9 @@ import { withScriptjs,
 } from "react-google-maps";
 import InfoBox from "react-google-maps/lib/components/addons/InfoBox";
 
+const REACT_APP_MAP_KEY = process.env.REACT_APP_MAP_KEY;
+const gMapUrl = `https://maps.googleapis.com/maps/api/js?v=3.exp&key=${REACT_APP_MAP_KEY}`;
+
 
 const MyMapComponent = withScriptjs(
   withGoogleMap(props => (
@@ -69,7 +72,7 @@ export default class Map extends Component {
     < MyMapComponent
       {...this.props}
       isMarkerShown
-      googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCzmnNpxUWrJ23VyI57iji2JPRrYwKxx64"
+      googleMapURL={gMapUrl}
       loadingElement={< div className='loading-element' />}
       containerElement={< div className='map-container' />}
       mapElement={< div  className='map-element' />}

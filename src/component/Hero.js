@@ -6,7 +6,7 @@ export default class Hero extends Component {
       <div className="image-container">
         <div className="screen">
           <h1>MI Brews</h1>
-          <p>Metro Detroit Brewing Companys</p>
+          <p>Metro Detroit Brewers</p>
         </div>  
       </div>
       
