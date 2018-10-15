@@ -1,4 +1,5 @@
 /* global google */
+//map components use react-google-maps https://tomchentw.github.io/react-google-maps/
 import React, { Component } from "react";
 import { withScriptjs,
   withGoogleMap,
@@ -43,7 +44,12 @@ const MyMapComponent = withScriptjs(
                     alt={venueInfo.name} />
                   <div className='info-div'>
                     <p className="info-name">{venueInfo.name}</p>
-                    <a aria-labelledby={'more info'} className="info-url" href={venueInfo.shortUrl}>More Info</a>
+                    <a aria-labelledby={'more info'}
+                     className="info-url" 
+                     href={venueInfo.shortUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                     >More Info</a>
                   </div>
                 </div>
               </React.Fragment>

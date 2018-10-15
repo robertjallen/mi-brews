@@ -33,26 +33,19 @@ class App extends Component {
 
   setCenter = (marker) => {
     this.setState({center: Object.assign(this.state.center, marker.lat, marker.lng)});
-    // console.log(marker);
   }
-
-      
-
 
   handleMarkerClick = (marker) => {
     this.closeAllMarkers();
-    this.setCenter(marker);
     marker.isOpen = true;
     this.setState({markers: Object.assign(this.state.markers,marker)})
-    const venue = this.state.venues.find(venue => venue.id === marker.id)
-    // getVenueDetails(marker.id)
+    const venue = this.state.venues.find(venue => venue.id === marker.id);
     SquareApi.getVenueDetails(marker.id) 
     .then(res => {
-      console.log(res.response);
       const newVenue = Object.assign(venue, res.response.venue);
       this.setState({venues: Object.assign(this.state.venues, newVenue)});
-      // console.log(newVenue);
     });
+    this.setCenter(marker);
   };
 
   handleListItemClick = (venue) => {
@@ -106,26 +99,6 @@ class App extends Component {
 
   componentDidMount(){
     this.searchVenues(20180323);
-    // SquareApi.search({
-    //   near: 'Brighton, MI',
-    //   radius: 500000,
-    //   query: 'brewery',
-    //   limit: 5
-    // }).then(results => {
-    //     const { venues } = results.response;
-    //     const { center } = results.response.geocode.feature.geometry;
-    //     const markers = venues.map(venue => {
-    //       return {
-    //         lat: venue.location.lat,
-    //         lng: venue.location.lng,
-    //         isOpen: false,
-    //         isVisible: true,
-    //         id: venue.id
-    //       };
-    //     });
-    //     this.setState({ venues, center, markers });
-    //   // console.log(results.response);
-    // });
   }
 
   render() {

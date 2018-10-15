@@ -54,6 +54,7 @@ div.infoBox {
      margin-left: -33vw;
      left: 0 !important;
      width: 66%;
+     max-width: 300px;
      border-radius: 3px;
      box-shadow: 3px 3px 13px rgba(0, 0, 0, 0.5);
 }
@@ -87,17 +88,18 @@ div.infoBox {
 }
 
 .info-url {
-     font-size: .75rem;
-     color: #666;
-     border: 1px solid #666;
-     padding: .25rem;
-     text-decoration: none;
-}
-
-.info-url:hover {
      border: 1px solid goldenrod;
      color: #fff;
      background: chocolate;
+     box-shadow: 3px 3px 13px rgba(143, 60, 13, 0.5);
+     font-size: .75rem;
+     padding: .25rem;
+     text-decoration: none;
+     transition: 0.3s;
+}
+
+.info-url:hover {
+     background: brown;
 }
 
 .sidebar {
@@ -296,8 +298,6 @@ div.infoBox {
           font-weight: bold;
      }
      .info-url {
-          color: #666;
-          border: 1px solid #666;
           padding: .333rem;
           text-decoration: none;
      }
