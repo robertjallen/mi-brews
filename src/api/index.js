@@ -41,7 +41,10 @@ class Helper {
       urlPrams
     )}`,
     requestData
-    ).then(res => res.json());
+    ).then(res => res.json())
+    .catch(error => {
+        window.alert("ERROR! " + error);
+    });
   }
 } 
 

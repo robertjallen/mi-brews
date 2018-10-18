@@ -5,11 +5,13 @@ import SquareApi from './api';
 import SideBar from './component/SideBar';
 import Hero from './component/Hero';
 
+
+//fousquare ID and Secret 
+//the key values should be stored in a .env file in the root directory
 const REACT_APP_ID = process.env.REACT_APP_ID;
 const REACT_APP_SECRET = process.env.REACT_APP_SECRET;
 
 class App extends Component {
-
   constructor(){
     super();
     this.state ={
@@ -31,32 +33,37 @@ class App extends Component {
     this.setState({markers: Object.assign(this.state.markers, markers) });
   };
 
-  setCenter = (marker) => {
-    this.setState({center: Object.assign(this.state.center, marker.lat, marker.lng)});
-  }
+  // // set new center
+  // setCenter = (marker) => {
+  //   this.setState({center: Object.assign(this.state.center, marker.lat, marker.lng)});
+  // }
 
+//marker click
   handleMarkerClick = (marker) => {
+    //close any markers open
     this.closeAllMarkers();
     marker.isOpen = true;
     this.setState({markers: Object.assign(this.state.markers,marker)})
+    // venue is venue that venue.id === marker.id
     const venue = this.state.venues.find(venue => venue.id === marker.id);
+    // use squareApi to get venue details using marker.id as the id for the venue.
     SquareApi.getVenueDetails(marker.id) 
     .then(res => {
       const newVenue = Object.assign(venue, res.response.venue);
       this.setState({venues: Object.assign(this.state.venues, newVenue)});
     });
-    this.setCenter(marker);
+    // // set new center value for map
+    // this.setCenter(marker);
   };
-
+  
+//listIemClick calls handleMarkerClick 
   handleListItemClick = (venue) => {
     const marker = this.state.markers.find(marker => marker.id === venue.id);
     this.handleMarkerClick(marker);
     console.log(venue);
   };
-  //SquareApi.//marker.id
-  
 
-
+  //search for a limit 5 brewery venues near Brighton, MI 
   searchVenues = (version) => {
     const endPoint = "https://api.foursquare.com/v2/venues/search?"
     const parameters = {
@@ -92,18 +99,22 @@ class App extends Component {
       });
       this.setState({ venues, center, markers });
     }).catch(error => {
-        console.log("ERROR! " + error);
+        window.alert("ERROR! " + error);
     });
   }
   
-
+   
+  
   componentDidMount(){
+    // google map api load error
+    window.gm_authFailure = () => {
+      window.alert('google maps error');
+    };
     this.searchVenues(20180323);
   }
 
   render() {
     return (
-      
       <div className="App">
         <Hero />
         <div className="main">
@@ -117,7 +128,6 @@ class App extends Component {
             handleMarkerClick={this.handleMarkerClick}
           />
         </div>
-     
       </div>
     );
   }

@@ -15,25 +15,31 @@ const gMapUrl = `https://maps.googleapis.com/maps/api/js?v=3.exp&key=${REACT_APP
 const MyMapComponent = withScriptjs(
   withGoogleMap(props => (
   <GoogleMap
-    defaultZoom={8}
+    defaultZoom={7}
     zoom={props.zoom}
     defaultCenter={{ lat: 30.397, lng: -97.644 }}
     center={props.center}
     tabIndex={-1}
     >
-
+    {/* if there is markers filter visible markers  */}
     {props.markers &&
      props.markers.filter(marker => marker.isVisible)
+    //  map over visible markers 
+    // index as key
       .map((marker, idx, arr) => {
         const venueInfo = props.venues.find(venue => venue.id === marker.id);
+
         return <Marker
           key={idx} 
           position={{ lat: marker.lat, lng: marker.lng}}
           onClick={() => props.handleMarkerClick(marker)}
+          // animate 1 open marker
           animation={arr.length === 1 || marker.isOpen
-            ? google.maps.Animation.BOUNCE  
+            ? google.maps.Animation.BOUNCE
+            //animate drop all markers  
             : google.maps.Animation.DROP }
         >
+        {/* info window */}
           {marker.isOpen && 
           venueInfo.bestPhoto && (
             <InfoBox>
@@ -59,15 +65,13 @@ const MyMapComponent = withScriptjs(
       })}
   </GoogleMap>
 ))
-);
-
-  
+)
 
 
 export default class Map extends Component {
   render(){
     return (
-    < MyMapComponent
+    < MyMapComponent 
       {...this.props}
       isMarkerShown
       googleMapURL={gMapUrl}

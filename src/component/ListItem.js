@@ -6,6 +6,7 @@ export default class ListItem extends Component {
       <li 
         className="listItem"
         aria-labelledby={this.props.name}
+        role={'contentinfo'}
         tabIndex={0}
         onClick={() => this.props.handleListItemClick(this.props)}
         >
