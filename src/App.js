@@ -18,7 +18,6 @@ class App extends Component {
       venues: [],
       markers: [],
       center: [],
-      venuePhotos: [],
       zoom: 7,
       updateSuperState: obj => {
         this.setState(obj);
@@ -118,14 +117,30 @@ class App extends Component {
     getPhotos = () => {
       this.state.venues.forEach(venue =>{
         // console.log(this.state.venues[0]);
+
         SquareApi.getVenueDetails(venue.id)
           .then(res => {
             const photo = res.response.venue;
-            // console.log(photo);
-            this.setState(() => this.state.venuePhotos.push(photo));
+            const venueMatch = this.state.venues.find(venue => venue.id === photo.id);
+            const newVenue = Object.assign(venueMatch, photo);
+            this.setState({ venues: Object.assign(this.state.venues, newVenue) });
           });
       });  
     }
+
+
+  // getPhotos = () => {
+  //   this.state.venues.forEach(venue => {
+  //     const venueMatch = this.state.venues.find(venue => venue.id === photo.id);
+  //     // use squareApi to get venue details using marker.id as the id for the venue.
+  //     SquareApi.getVenueDetails(venue.id)
+  //       .then(res => {
+  //         // console.log(res);
+  //         const newVenue = Object.assign(venueMatch, res.response.venue);
+  //         this.setState({ venues: Object.assign(this.state.venues, newVenue) });
+  //       });
+  //   })
+  // };
   
   
    

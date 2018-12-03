@@ -5,7 +5,7 @@ export default class VenueList extends Component {
   render() {
     return (
       <ul className="venuList">
-        {this.props.venues && this.props.venuePhotos &&
+        {this.props.venues && 
           this.props.venues.map((venue, idx) => ( 
           
             <ListItem 
@@ -13,7 +13,6 @@ export default class VenueList extends Component {
               {...venue}
               {...this.props}
               handleListItemClick={this.props.handleListItemClick}
-              venueImage={this.props.venueImage(venue.id)}
             />
           ))}
       </ul>
