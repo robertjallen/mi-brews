@@ -58,6 +58,17 @@ export default class SideBar extends Component {
     this.props.updateSuperState({ markers });
   };
 
+
+  venueImage = (VENUE_ID) => {
+    this.props.venuePhotos.forEach(photo => {
+      if (photo.id === VENUE_ID) {
+        console.log(`${photo.bestPhoto.prefix}100x100${photo.bestPhoto.suffix}`);
+        return `${photo.bestPhoto.prefix}100x100${photo.bestPhoto.suffix}`;
+      }
+    });
+  }
+
+
   render() {
     return(
     <div className='sidebar'>
@@ -71,6 +82,7 @@ export default class SideBar extends Component {
         />
       <VenueList 
         {...this.props}
+        venueImage={this.venueImage}
         venues={this.handleFilterVenues()}
         handleListItemClick={this.props.handleListItemClick}
       />

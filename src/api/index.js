@@ -2,8 +2,8 @@
 // const env = from './env'
 const REACT_APP_ID = process.env.REACT_APP_ID;
 const REACT_APP_SECRET = process.env.REACT_APP_SECRET;
-console.log(REACT_APP_ID);
-console.log(REACT_APP_SECRET);
+// console.log(REACT_APP_ID);
+// console.log(REACT_APP_SECRET);
 
 class Helper {
   static baseURL(){
