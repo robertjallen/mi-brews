@@ -55,7 +55,7 @@ const MyMapComponent = withScriptjs(
                      href={venueInfo.shortUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                     >More Info</a>
+                     >View Details</a>
                   </div>
                 </div>
               </React.Fragment>

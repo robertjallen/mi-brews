@@ -1,15 +1,16 @@
 import React, {Component} from 'react';
 
+// import Brewery from './Brewery';
+
+
 export default class ListItem extends Component {
 
-  
-
   render() {
-    //logging this works  
-    console.log(this.props.bestPhoto);
-    // logging this produces cannot read property 'prefix' of undefined
-    // console.log(this.props.bestPhoto.prefix);
+    
+    const myObj = { ...this.props.bestPhoto };
+    let photo = myObj.prefix + '100x100' + myObj.suffix;
     return (
+      <div>
       <li 
         className="listItem"
         aria-labelledby={this.props.name}
@@ -17,21 +18,30 @@ export default class ListItem extends Component {
         tabIndex={0}
         onClick={() => this.props.handleListItemClick(this.props)}
         >
-        <p>{this.props.contact.formattedPhone}</p>
-        {/* <p>{this.props.bestPhoto.prefix + '80x80' + this.props.bestPhoto.suffix}</p> */}
-        {/* <p>{this.props.bestPhoto.prefix}</p> */}
-        {/* <img className="info-image"
-          src={`${this.props.bestPhoto.prefix}100x100${this.props.bestPhoto.suffix}`}
-          alt={'venue'} /> */}
-        {/* <img src={this.props.categories[0].icon.prefix+'32'+this.props.categories[0].icon.suffix} alt={'venue'}/> */}
+
+        <img src={photo} alt={this.props.name}/>
         <div className='details'>
           <p className="details-name">{this.props.name}</p>
-          <p className="details-address">{this.props.location.formattedAddress[0]}</p>
-          <p className="details-address">{this.props.location.formattedAddress[1]}</p>
+          <p>{this.props.id}</p>
+          {/* <p className="details-address">{this.props.location.formattedAddress[0]}</p>
+          <p className="details-address">{this.props.location.formattedAddress[1]}</p> */}
           {/* <p className="details-name">{this.props.bestPhoto.prefix}</p> */}
+          {/* <a aria-labelledby={'more info'}
+            className="info-url"
+            href={this.props.url}
+            target="_blank"
+            rel="noopener noreferrer"
+        >View Details</a>*/}
+
+
+           
+         
+          
         </div>
-        
       </li>
+      </div>//enclosing tag
     );
   }
 }
+
+

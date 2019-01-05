@@ -4,7 +4,9 @@ import Map from './component/Map';
 import SquareApi from './api';
 import SideBar from './component/SideBar';
 import Hero from './component/Hero';
-
+import Brewery from './component/Brewery';
+var ReactRouter = require('react-router-dom');
+var Route = ReactRouter.Route;
 
 //fousquare ID and Secret 
 //the key values should be stored in a .env file in the root directory
@@ -63,11 +65,13 @@ class App extends Component {
 
   
 //listIemClick calls handleMarkerClick 
-  handleListItemClick = (venue) => {
-    const marker = this.state.markers.find(marker => marker.id === venue.id);
-    this.handleMarkerClick(marker);
-    // console.log(venue);
-  };
+  // handleListItemClick = (venue) => {
+  //   // const marker = this.props.markers.find(marker => marker.id === venue.id);
+  //   // this.handleMarkerClick(marker);
+  //   console.log(venue);
+  //   // console.log(marker);
+  //   this.setState({venues: venue});
+  // };
 
   //search for a limit 5 brewery venues near Brighton, MI 
   searchVenues = (version) => {
@@ -121,6 +125,7 @@ class App extends Component {
         SquareApi.getVenueDetails(venue.id)
           .then(res => {
             const photo = res.response.venue;
+            // console.log(res.response.venue.bestPhoto.prefix + '100x100' + res.response.venue.bestPhoto.suffix);
             const venueMatch = this.state.venues.find(venue => venue.id === photo.id);
             const newVenue = Object.assign(venueMatch, photo);
             this.setState({ venues: Object.assign(this.state.venues, newVenue) });
@@ -157,17 +162,27 @@ class App extends Component {
     return (
       <div className="App">
         <Hero />
-        <div className="main">
-          <SideBar
-            {...this.state}
-            handleListItemClick={this.handleListItemClick}
-          />
+        <Route exact path='/' render={() => (
+          <div className="main">
+            <SideBar
+              {...this.state}
+              handleListItemClick={this.handleListItemClick}
+            />
 
-          <Map
-            {...this.state}
-            handleMarkerClick={this.handleMarkerClick}
-          />
-        </div>
+            <Map
+              {...this.state}
+              handleMarkerClick={this.handleMarkerClick}
+            />
+          </div>
+        )}
+        />
+        
+        {/* Dynamic venue details page */}
+        <Route path='/brewery' render={(props) => (
+          <Brewery {...props} />
+        )}
+        />
+
       </div>
     );
   }
