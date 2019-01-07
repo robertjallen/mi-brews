@@ -8,9 +8,9 @@ export default class VenueList extends Component {
       <ul className="venuList">
         {this.props.venues && 
           this.props.venues.map((venue, idx) => ( 
-          <div>
+          <div className="list-item">
             <ListItem 
-              key={idx} 
+              key={venue.id} 
               {...venue}
               {...this.props}
               handleListItemClick={this.props.handleListItemClick}
@@ -18,15 +18,16 @@ export default class VenueList extends Component {
           
             <Link
               className='button'
-              key={venue.id}
+              key={idx}
               to={{
                 pathname: '/brewery',
                 state: {
-                  venues: this.props.venues[idx]
+                  venues: this.props.venues[idx],
+                  markers: this.props.markers
                 }
               }}
             >
-              {venue.id}
+              <button>More Details</button>
           </Link>
           </div>
           ))}

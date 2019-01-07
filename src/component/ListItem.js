@@ -10,9 +10,8 @@ export default class ListItem extends Component {
     const myObj = { ...this.props.bestPhoto };
     let photo = myObj.prefix + '100x100' + myObj.suffix;
     return (
-      <div>
+      <div className='details'>
       <li 
-        className="listItem"
         aria-labelledby={this.props.name}
         role={'contentinfo'}
         tabIndex={0}
@@ -20,23 +19,9 @@ export default class ListItem extends Component {
         >
 
         <img src={photo} alt={this.props.name}/>
-        <div className='details'>
+        <div className='details-details'>
           <p className="details-name">{this.props.name}</p>
-          <p>{this.props.id}</p>
-          {/* <p className="details-address">{this.props.location.formattedAddress[0]}</p>
-          <p className="details-address">{this.props.location.formattedAddress[1]}</p> */}
-          {/* <p className="details-name">{this.props.bestPhoto.prefix}</p> */}
-          {/* <a aria-labelledby={'more info'}
-            className="info-url"
-            href={this.props.url}
-            target="_blank"
-            rel="noopener noreferrer"
-        >View Details</a>*/}
-
-
-           
-         
-          
+          <p className="details-address">{this.props.location.formattedAddress[0]}</p>
         </div>
       </li>
       </div>//enclosing tag

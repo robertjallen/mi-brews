@@ -134,7 +134,7 @@ div.infoBox {
      list-style: none;
 }
 
-.listItem {
+.list-item {
      background: goldenrod;
      font-size: 1rem;
      border-radius: 5px;
@@ -142,40 +142,45 @@ div.infoBox {
      margin-bottom: 1rem;
      cursor: pointer;
      display: flex;
+     flex-direction: column;
      /* align-items: center; */
 }
 
-.listItem img {
-     background: goldenrod;
+.list-item img {
+     /* background: goldenrod; */
      /* height: 100%; */
      /* border-radius: 50%; */
 }
 
-.details {
+.details li{
      color: #666;
      margin: 0;
-     width: 100%;
      display: flex;
-     flex-direction: column;
+     flex-direction: row;
      background: #fff;
 }
 
-.listItem p {
-     margin: .333rem 0;
+.details-details{
      width: 100%;
 }
 
 .details-name {
-     height: 60%;
+     width: 100%;
      letter-spacing: 1.3px;
      text-transform: capitalize;
      color: chocolate;
      font-weight: bolder;
+     margin: 5px 0;
 }
 
 .details-address {
-     font-size: .666rem;
-     line-height: 12px;
+     margin: 10px 0;
+}
+
+.button{
+     margin-top: -30px;
+     width: calc(100% - 100px);
+     margin-left: 100px; 
 }
 
 .App-logo {
@@ -196,6 +201,56 @@ div.infoBox {
 
 .App-link {
      color: #61dafb;
+}
+
+.nav{
+     padding: 10px;
+     font-size: 17px;
+     display: block;
+     background: #eee;
+     width: 100%;
+}
+
+.nav a{
+     text-decoration: none;
+     color: chocolate;
+}
+
+.hero{
+    width: 100vw;
+    /* height: 66vh; */
+}
+
+.hero img {
+     width: 100%;
+     border: 1px solid purple;
+}
+.hero-text {
+     color: #fff;
+     position: absolute;
+     border: 1px solid #FFDF;
+     height: 100%;
+     width: 100%;
+}
+.open{
+     font-size: 14px;
+     letter-spacing: 2px;
+     color: #fff;
+     background: green;
+     padding: 3px 0;
+     text-transform: uppercase;
+     margin-top: -5px;
+}
+
+.address{
+     padding: 20px 10px;
+     color: #666;
+     font-size: 14px;
+}
+
+.description{
+     padding: 0 10px;
+     letter-spacing: 1px;
 }
 
 @keyframes App-logo-spin {
@@ -269,9 +324,15 @@ div.infoBox {
           font-size: 1.2rem;
      }
      .details {
-          padding: .25rem;
+          /* padding: .25rem; */
      }
 }
+
+@media screen and (max-width: 500px) {
+     .hero{
+          /* flex-direction: column; */
+     }
+}     
 
 @media screen and (max-width: 400px) {
      div.infoBox {

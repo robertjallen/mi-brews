@@ -179,7 +179,13 @@ class App extends Component {
         
         {/* Dynamic venue details page */}
         <Route path='/brewery' render={(props) => (
-          <Brewery {...props} />
+          <div>
+            <Brewery {...props} />
+            <Map
+              {...this.state}
+              handleMarkerClick={this.handleMarkerClick}
+            />
+          </div>  
         )}
         />
 
