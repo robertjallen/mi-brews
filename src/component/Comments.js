@@ -9,15 +9,17 @@ class Comments extends React.Component {
 
   render() {
 
-    const venue = this.props.location.state.venues;
-    
+    const venueID = this.props.location.state.venues.id;
+    console.log(venueID);
+
     return (
       <ReactDisqusComments
-        shortname="mi-brews"
-        identifier={venue.name + venue.id}
-        title={venue.name}
-        url="https://www.allentowngroup.com/mi-brews/"
-        category_id={venue.id}
+        shortname="allentowngroup"
+        identifier={venueID}
+        title="Brewery Thread"
+        url="https://www.allentowngroup.com/mi-brews/brewery"
+        // url="http://localhost:3000"
+        category_id="entertainment"
         onNewComment={this.handleNewComment} />
     );
   }
