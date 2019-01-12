@@ -1,3 +1,8 @@
+* {
+  box-sizing: border-box;
+  letter-spacing: 1px;
+}
+
 .App {
      text-align: center;
      height: 100vh;
@@ -7,13 +12,17 @@
      font-size: 18px;
 }
 
+p{
+     margin: 0;
+}
+
 .main {
      display: flex;
-     flex-direction: row;
+     flex-direction: column-reverse !important;
 }
 
 .image-container {
-     height: 35vh;
+     height: 25vh;
      width: 100vw;
      background-image: url('https://images.pexels.com/photos/1267684/pexels-photo-1267684.jpeg?auto=compress&cs=tinysrgb&h=650&w=940');
      background-size: cover;
@@ -22,26 +31,49 @@
 }
 
 .screen {
-     padding-top: 10vh;
+     /* padding-top: 10vh; */
+     /* height: 100%; */
+     /* background: rgba(0, 0, 0, 0.5); */
+}
+
+.screen {
      height: 100%;
+     padding-top: 1vh;
      background: rgba(0, 0, 0, 0.5);
 }
 
 .screen h1 {
-     text-transform: uppercase;
+     /* text-transform: uppercase;
      color: #fff;
      font-weight: bold;
-     letter-spacing: .75rem;
+     letter-spacing: .75rem; */
+}
+
+.screen p {
+     /* color: #fff;
+     font-size: 1.5rem;
+     letter-spacing: 1.25px; */
+}
+
+.screen h1 {
+     margin: 0;
+     text-transform: uppercase;
+     color: #fff;
+     font-size: 2rem;
+     font-weight: bold;
 }
 
 .screen p {
      color: #fff;
-     font-size: 1.5rem;
+     font-size: 1.2rem;
      letter-spacing: 1.25px;
 }
 
 .map-container {
-     width: 75vw;
+     width: 100vw;
+     height: 25vh;
+     z-index: 0;
+     border: 1px solid blue;
 }
 
 .loading-element,
@@ -109,33 +141,51 @@ div.infoBox {
 }
 
 .sidebar {
+     display: flex;
+     flex-direction: column;
      max-height: 100vh;
+     width: 100vw;
      overflow: scroll;
-     width: 25vw;
      background: #fff;
 }
 
 #search {
-     margin: 1rem 0;
+     /* margin: 1rem 0;
      border-radius: 20px;
      background: #f6f6f6;
      width: 90%;
      height: 2rem;
+     color: #666; */
+}
+
+#search {
      font-size: 1rem;
      padding: 1rem;
-     color: #666;
-     text-transform: capitalize;
+     border-radius: 3px;
+     background: #fff;
+     position: absolute;
+     top: 0;
+     left: 7.5vw;
+     align-content: center;
+     margin-top: 18vh;
+     margin-left: auto;
+     margin-right: auto;
+     z-index: 1000;
+     width: 85vw;
+     height: 1.75rem;
      letter-spacing: 2px;
+     text-transform: capitalize;
 }
 
 .venuList {
      background: #f6f6f6;
-     padding: 1rem;
+     margin: 0;
+     padding: .5rem;
+     padding-top: 1rem;
      list-style: none;
 }
 
 .list-item {
-     background: goldenrod;
      font-size: 1rem;
      border-radius: 5px;
      box-shadow: 3px 3px 13px rgba(0, 0, 0, 0.5);
@@ -143,13 +193,14 @@ div.infoBox {
      cursor: pointer;
      display: flex;
      flex-direction: column;
-     /* align-items: center; */
 }
 
-.list-item img {
-     /* background: goldenrod; */
-     /* height: 100%; */
-     /* border-radius: 50%; */
+.list-item a {
+     text-decoration: none;
+}
+
+.list-item a:hover{
+     box-shadow: 3px 3px 13px rgba(128, 128, 0, 0.7);
 }
 
 .details li{
@@ -161,7 +212,12 @@ div.infoBox {
 }
 
 .details-details{
+     margin-left: 5px;
      width: 100%;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     text-align: left;
 }
 
 .details-name {
@@ -170,17 +226,19 @@ div.infoBox {
      text-transform: capitalize;
      color: chocolate;
      font-weight: bolder;
-     margin: 5px 0;
 }
 
 .details-address {
-     margin: 10px 0;
 }
 
-.button{
-     margin-top: -30px;
-     width: calc(100% - 100px);
-     margin-left: 100px; 
+.rating{
+     display: flex;
+     flex-direction: row;
+}
+
+.rating .star{
+     color: #ffc107;
+     font-size: 12px;
 }
 
 .App-logo {
@@ -206,7 +264,8 @@ div.infoBox {
 .nav{
      padding: 10px;
      font-size: 17px;
-     display: block;
+     text-align: left;
+     /* display: block; */
      background: #eee;
      width: 100%;
 }
@@ -218,29 +277,48 @@ div.infoBox {
 
 .hero{
     width: 100vw;
-    /* height: 66vh; */
+    height: 25vh;
+    overflow: hidden;
+    z-index: -100;
 }
 
 .hero img {
      width: 100%;
-     border: 1px solid purple;
 }
+
 .hero-text {
+     text-transform: uppercase;
+     font-weight: bold;
+     letter-spacing: .75rem;
      color: #fff;
      position: absolute;
-     border: 1px solid #FFDF;
-     height: 100%;
      width: 100%;
 }
+
 .open{
+     position: relative;
      font-size: 14px;
      letter-spacing: 2px;
      color: #fff;
-     background: green;
+     background-color: rgba(0,128,0,.3);
      padding: 3px 0;
      text-transform: uppercase;
-     margin-top: -5px;
+     margin-top: -24px;
+     z-index: 1000;
 }
+
+.closed{
+     position: relative;
+     font-size: 14px;
+     letter-spacing: 2px;
+     color: #fff;
+     background-color: rgba(128,0,0,.3);
+     padding: 3px 0;
+     text-transform: uppercase;
+     margin-top: -24px;
+     z-index: 1000;
+}
+
 
 .address{
      padding: 20px 10px;
@@ -261,79 +339,40 @@ div.infoBox {
           transform: rotate(360deg);
      }
 }
-
-@media screen and (max-width: 1100px) {
+ 
+/* @media screen and (max-width: 1100px) {
      .sidebar {
           width: 33vw;
      }
      .map-container {
           width: 67vw;
      }
-}
+} */
 
-@media screen and (max-width: 800px) {
-     div.main {
-          display: flex;
-          flex-direction: column-reverse !important;
+
+/* @media screen and (min-width: 800px) { */
+     /* 
+    
+     .details-address{
+          font-size: 12px;
+          letter-spacing: 1px;
      }
-     .image-container {
-          height: 25vh;
-     }
-     .map-container {
-          width: 100vw;
-          height: 25vh;
-          z-index: 0;
-     }
-     .sidebar {
-          display: flex;
-          flex-direction: column;
-          width: 100vw;
-          height: 45vh;
-     }
-     .venuList {
-          padding: 1rem 10vw;
-          width: 80%;
-          margin: 0 auto;
-     }
-     #search {
-          border-radius: 3px;
-          background: #fff;
-          position: absolute;
-          top: 0;
-          left: 7.5vw;
-          align-content: center;
-          margin-top: 18vh;
-          margin-left: auto;
-          margin-right: auto;
-          z-index: 1000;
-          width: 85vw;
-          height: 1.75rem;
-     }
-     .screen {
-          padding-top: 1vh;
-          background: rgba(0, 0, 0, 0.5);
-     }
-     .screen h1 {
-          margin: 0;
-          text-transform: uppercase;
-          color: #fff;
-          font-size: 2rem;
-          font-weight: bold;
-     }
-     .screen p {
-          font-size: 1.2rem;
-     }
+     
+     
+     
      .details {
           /* padding: .25rem; */
-     }
-}
+     /* } */ 
+/* } */
 
+/*
 @media screen and (max-width: 500px) {
      .hero{
           /* flex-direction: column; */
-     }
-}     
+     /* } */
+/* }       */
 
+/*
 @media screen and (max-width: 400px) {
      div.infoBox {
           background: #fff;
@@ -372,3 +411,4 @@ div.infoBox {
           text-decoration: none;
      }
 }
+*/

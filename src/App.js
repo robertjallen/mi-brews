@@ -5,9 +5,14 @@ import SquareApi from './api';
 import SideBar from './component/SideBar';
 import Hero from './component/Hero';
 import Brewery from './component/Brewery';
+import Comments from './component/Comments';
+import { library } from '@fortawesome/fontawesome-svg-core';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 var ReactRouter = require('react-router-dom');
 var Route = ReactRouter.Route;
 
+library.add(faStar)
 //fousquare ID and Secret 
 //the key values should be stored in a .env file in the root directory
 const REACT_APP_ID = process.env.REACT_APP_ID;
@@ -56,7 +61,7 @@ class App extends Component {
       this.setState({venues: Object.assign(this.state.venues, newVenue)});
     });
     // // set new center value for map
-    // this.setCenter(marker);
+    this.setCenter(marker);
   };
 
   
@@ -65,13 +70,14 @@ class App extends Component {
 
   
 //listIemClick calls handleMarkerClick 
-  // handleListItemClick = (venue) => {
-  //   // const marker = this.props.markers.find(marker => marker.id === venue.id);
-  //   // this.handleMarkerClick(marker);
-  //   console.log(venue);
-  //   // console.log(marker);
-  //   this.setState({venues: venue});
-  // };
+  handleListItemClick = (venue) => {
+    // const marker = this.props.markers.find(marker => marker.id === venue.id);
+    // this.handleMarkerClick(marker);
+    // console.log(marker);
+    console.log(venue);
+    // this.setState({venues: venue});
+    // this.setState({zoom: 12});
+  };
 
   //search for a limit 5 brewery venues near Brighton, MI 
   searchVenues = (version) => {
@@ -180,10 +186,16 @@ class App extends Component {
         {/* Dynamic venue details page */}
         <Route path='/brewery' render={(props) => (
           <div>
-            <Brewery {...props} />
+            <Brewery
+              {...props}
+              // handleListItemClick={this.handleListItemClick} 
+            />
             <Map
               {...this.state}
               handleMarkerClick={this.handleMarkerClick}
+            />
+            <Comments 
+            {...props}
             />
           </div>  
         )}
