@@ -10,8 +10,8 @@ import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
      // development
-     //  <BrowserRouter basename='/'>
-     // deployed
+     // <BrowserRouter basename='/'>
+     //  deployed 
      <BrowserRouter basename='/mi-brews'>
           <App />
      </BrowserRouter>,

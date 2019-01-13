@@ -330,6 +330,10 @@ div.infoBox {
      padding: 0 10px;
      letter-spacing: 1px;
 }
+.disqus_thread{
+     width: 90%;
+     padding: 1em;
+}
 
 @keyframes App-logo-spin {
      from {

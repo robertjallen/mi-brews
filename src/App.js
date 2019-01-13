@@ -5,7 +5,7 @@ import SquareApi from './api';
 import SideBar from './component/SideBar';
 import Hero from './component/Hero';
 import Brewery from './component/Brewery';
-import Comments from './component/Comments';
+import DisqusThread from './component/DisqusThread';
 import { library } from '@fortawesome/fontawesome-svg-core';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons';
@@ -89,7 +89,7 @@ class App extends Component {
         near: 'Brighton, MI',
         radius: 500000,
         query: 'brewery',
-        limit: 2
+        limit: 4
   }
 
   fetch(
@@ -194,9 +194,16 @@ class App extends Component {
               {...this.state}
               handleMarkerClick={this.handleMarkerClick}
             />
-            <Comments 
-            {...props}
-            />
+            
+            <DisqusThread
+              className='disqus'
+              shortname='allentowngroup'
+              basename='https://allentowngroup.com'
+              identifier="allentowngroup"
+              title="Brewerys"
+              url="https://allentowngroup.com"
+            >
+            </DisqusThread>
           </div>  
         )}
         />
