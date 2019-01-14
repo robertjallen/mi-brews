@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import images from '../images';
 
 
 // function rating(){
@@ -38,6 +38,15 @@ export default class ListItem extends Component {
 
     const myObj = { ...this.props.bestPhoto };
     let photo = myObj.prefix + '100x100' + myObj.suffix;
+    // if (typeof myObj.prefix === 'string' || myObj.prefix instanceof String){
+    //   console.log('string');
+    //   // photo = "https://images.pexels.com/photos/1267323/pexels-photo-1267323.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=100"
+    // }else
+    if(typeof myObj.prefix === undefined || myObj.prefix === undefined){
+      // console.log('undefined');
+      photo = require('../images/beer.png');
+    }
+
     return (
       <div className='details'>
       <li 
@@ -46,7 +55,7 @@ export default class ListItem extends Component {
         tabIndex={0}
         >
 
-        <img src={photo} alt={this.props.name}/>
+        <img className='details-photo' src={photo} alt={this.props.name}/>
         <div className='details-details'>
           <p className="details-name">{this.props.name}</p>
           <p className="details-address">{this.props.location.formattedAddress[0]}</p>

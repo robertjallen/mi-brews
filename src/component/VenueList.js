@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default class VenueList extends Component {
   render() {
+   
     return (
       <ul className="venuList">
         {this.props.venues && 

@@ -4,24 +4,55 @@ import { Link } from 'react-router-dom';
 class Brewery extends Component {
 
   render() {
-    const venue = this.props.location.state.venues;
+  const venue = this.props.location.state.venues;
+
+    // console.log(venue.bestPhoto)
+
+    const myObj = { ...this.props.location.state.venues.bestPhoto };
+    let photo = myObj.prefix + '1100x1100' + myObj.suffix;
+    // if (typeof myObj.prefix === 'string' || myObj.prefix instanceof String) {
+    //   console.log('string');
+    //   // photo = "https://images.pexels.com/photos/1267323/pexels-photo-1267323.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=100"
+    // } else 
+    if (typeof myObj.prefix === undefined || myObj.prefix === undefined) {
+      // console.log('undefined');
+      photo = require('../images/beer.png');
+    }
+
 
   function OpenClosed () {
-    let hours = 'open'
-    if(venue.hours.isOpen === true){
+    // const myHours = { ...this.props.location.state.venues.hours.isOpen };
+    if(typeof venue.hours === undefined || venue.hours === undefined){
+      return (
+        <div className='closed'>hours unlisted</div>
+      )
+    }else if(venue.hours.isOpen === false){
       return(
-        <div className='open'>
-              {hours}
-        </div>
+        <div className='closed'>{venue.hours.status}</div>
       )
     }else{
-      hours = 'closed'
       return(
-        <div className='closed'>
-              {hours}
-        </div>
+      <div className='open'>{venue.hours.status}</div>
       )
     }
+    // let hours = 'open'
+    //if(myHours.isOpen === undefined){
+    //  console.log('open or closed not listed');
+  //  }  
+    // }else if(myHours.isOpen === true){
+    //   return(
+    //     <div className='open'>
+    //           {hours}
+    //     </div>
+    //   )
+    // }else{
+    //   hours = 'closed'
+    //   return(
+    //     <div className='closed'>
+    //           {hours}
+    //     </div>
+    //   )
+    // }
 }
 
 
@@ -40,12 +71,12 @@ class Brewery extends Component {
           <div className='hero-text'>
             <h2>{venue.name}</h2>
           </div>
-          <img alt={venue.name} src={venue.bestPhoto.prefix + '720x720' + venue.bestPhoto.suffix} />        
+          <img alt={venue.name} src={photo} />        
         </div>
         {/* <div className='open'>
               {hours}
         </div>   */}
-        <OpenClosed/>
+        <OpenClosed />
         <div className='address'>
          {venue.location.formattedAddress[0]} , {venue.location.formattedAddress[1]}
         </div>

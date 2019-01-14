@@ -81,6 +81,12 @@ class App extends Component {
 
   //search for a limit 5 brewery venues near Brighton, MI 
   searchVenues = (version) => {
+    const windowLocation = window.location.origin;
+    let venueLimit = 50;
+    
+    if (windowLocation.indexOf("localhost") > -1) {
+      venueLimit = 3;
+    }
     const endPoint = "https://api.foursquare.com/v2/venues/search?"
     const parameters = {
         client_id: REACT_APP_ID,
@@ -89,7 +95,7 @@ class App extends Component {
         near: 'Brighton, MI',
         radius: 500000,
         query: 'brewery',
-        limit: 4
+        limit: venueLimit
   }
 
   fetch(
@@ -170,6 +176,7 @@ class App extends Component {
         <Hero />
         <Route exact path='/' render={() => (
           <div className="main">
+            
             <SideBar
               {...this.state}
               handleListItemClick={this.handleListItemClick}
@@ -179,7 +186,9 @@ class App extends Component {
               {...this.state}
               handleMarkerClick={this.handleMarkerClick}
             />
+            
           </div>
+          
         )}
         />
         
