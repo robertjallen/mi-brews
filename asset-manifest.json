@@ -1,13 +1,14 @@
 {
-  "main.css": "/mi-brews/static/css/main.cb031990.chunk.css",
-  "main.js": "/mi-brews/static/js/main.936553d1.chunk.js",
-  "main.js.map": "/mi-brews/static/js/main.936553d1.chunk.js.map",
-  "static/js/1.89ee1336.chunk.js": "/mi-brews/static/js/1.89ee1336.chunk.js",
-  "static/js/1.89ee1336.chunk.js.map": "/mi-brews/static/js/1.89ee1336.chunk.js.map",
+  "main.css": "/mi-brews/static/css/main.8535b352.chunk.css",
+  "main.js": "/mi-brews/static/js/main.7cecbf67.chunk.js",
+  "main.js.map": "/mi-brews/static/js/main.7cecbf67.chunk.js.map",
+  "static/js/1.32321601.chunk.js": "/mi-brews/static/js/1.32321601.chunk.js",
+  "static/js/1.32321601.chunk.js.map": "/mi-brews/static/js/1.32321601.chunk.js.map",
   "runtime~main.js": "/mi-brews/static/js/runtime~main.7af85e8c.js",
   "runtime~main.js.map": "/mi-brews/static/js/runtime~main.7af85e8c.js.map",
-  "static/css/main.cb031990.chunk.css.map": "/mi-brews/static/css/main.cb031990.chunk.css.map",
+  "static/media/beer.png": "/mi-brews/static/media/beer.aee7ad9d.png",
+  "static/css/main.8535b352.chunk.css.map": "/mi-brews/static/css/main.8535b352.chunk.css.map",
   "index.html": "/mi-brews/index.html",
-  "precache-manifest.90e197fbff27cc838fa63c4ce84deec5.js": "/mi-brews/precache-manifest.90e197fbff27cc838fa63c4ce84deec5.js",
+  "precache-manifest.aaa600144eb5a8eefafa8b5fd4917463.js": "/mi-brews/precache-manifest.aaa600144eb5a8eefafa8b5fd4917463.js",
   "service-worker.js": "/mi-brews/service-worker.js"
 }
