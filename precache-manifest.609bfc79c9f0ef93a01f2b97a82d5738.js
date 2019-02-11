@@ -12,19 +12,19 @@ self.__precacheManifest = [
     "url": "/mi-brews/static/js/runtime~main.7af85e8c.js"
   },
   {
-    "revision": "ae4f1fbe177704b57366",
-    "url": "/mi-brews/static/js/main.ae4f1fbe.chunk.js"
+    "revision": "ab9bbda0a16b150caa38",
+    "url": "/mi-brews/static/js/main.ab9bbda0.chunk.js"
   },
   {
     "revision": "4fac0e72f15228a064ab",
     "url": "/mi-brews/static/js/1.4fac0e72.chunk.js"
   },
   {
-    "revision": "ae4f1fbe177704b57366",
+    "revision": "ab9bbda0a16b150caa38",
     "url": "/mi-brews/static/css/main.3e0b3349.chunk.css"
   },
   {
-    "revision": "484ecdcd98a2417c407a42f1b304f7b6",
+    "revision": "7db37a87661cb44e89fc75512eefdb76",
     "url": "/mi-brews/index.html"
   }
 ];
