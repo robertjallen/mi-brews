@@ -142,12 +142,20 @@ class App extends Component {
 
         SquareApi.getVenueDetails(venue.id)
           .then(res => {
-            const photo = res.response.venue;
-            // console.log(res.response.venue.bestPhoto.prefix + '100x100' + res.response.venue.bestPhoto.suffix);
-            const venueMatch = this.state.venues.find(venue => venue.id === photo.id);
-            const newVenue = Object.assign(venueMatch, photo);
-            this.setState({ venues: Object.assign(this.state.venues, newVenue) });
-          });
+            if(!res.response.venue){
+              console.log(res.meta.code)
+            }else{
+              const photo = res.response.venue;
+              // console.log(res.response.venue.bestPhoto.prefix + '100x100' + res.response.venue.bestPhoto.suffix);
+              const venueMatch = this.state.venues.find(venue => venue.id === photo.id);
+              const newVenue = Object.assign(venueMatch, photo);
+              this.setState({ venues: Object.assign(this.state.venues, newVenue) });  
+            }
+          })
+          .catch(error => {
+            console.log(error)
+            window.alert("ERROR! " + error);
+        });
       });  
     }
 
