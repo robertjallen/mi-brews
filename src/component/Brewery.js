@@ -60,9 +60,10 @@ class Brewery extends Component {
 
       <div>
         <div className='nav'>
-         <Link
+          <Link
+              onClick={() => this.props.handleHomeClick()}
               to='/'
-            >
+          >
               Home 
           </Link> / {venue.name}
         </div>  

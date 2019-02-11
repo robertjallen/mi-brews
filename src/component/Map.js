@@ -70,13 +70,19 @@ const MyMapComponent = withScriptjs(
 
 export default class Map extends Component {
   render(){
+
+    let containerClass = 'map-container'
+    if(this.props.brewery){
+      containerClass = 'map-container-brewery'
+    }
+
     return (
     < MyMapComponent 
       {...this.props}
       isMarkerShown
       googleMapURL={gMapUrl}
       loadingElement={< div className='loading-element' />}
-      containerElement={< div className='map-container' />}
+      containerElement={< div className={containerClass} />}
       mapElement={< div  className='map-element' />}
     />
     );

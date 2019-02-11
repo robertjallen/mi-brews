@@ -13,7 +13,8 @@
     "react-disqus-comments": "^1.4.0",
     "react-dom": "^16.5.2",
     "react-google-maps": "^9.4.5",
-    "react-scripts": "2.0.3"
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^2.1.3"
   },
   "homepage": "https://bobbidgi.github.io/mi-brews",
   "scripts": {

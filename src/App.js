@@ -25,6 +25,7 @@ class App extends Component {
       venues: [],
       markers: [],
       center: [],
+      brewery: false,
       zoom: 7,
       updateSuperState: obj => {
         this.setState(obj);
@@ -75,9 +76,14 @@ class App extends Component {
     // this.handleMarkerClick(marker);
     // console.log(marker);
     console.log(venue);
+    this.setState({brewery: true});
     // this.setState({venues: venue});
     // this.setState({zoom: 12});
   };
+
+  handleHomeClick = () => {
+    this.setState({brewery: false});
+  }
 
   //search for a limit 5 brewery venues near Brighton, MI 
   searchVenues = (version) => {
@@ -197,7 +203,7 @@ class App extends Component {
           <div>
             <Brewery
               {...props}
-              // handleListItemClick={this.handleListItemClick} 
+              handleHomeClick={this.handleHomeClick} 
             />
             <Map
               {...this.state}
