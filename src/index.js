@@ -7,18 +7,18 @@ import { BrowserRouter } from 'react-router-dom';
 
 // ReactDOM.render(<App />, document.getElementById('root'));
 
-// const windowLocation = window.location.origin;
-// let base = '/';
+const windowLocation = window.location.origin;
+let base = '/mi-brews';
 // if on localhost during development base = slash
-// if (windowLocation.indexOf("localhost") > -1) {
-     // base = '/';
-// }
+if (windowLocation.indexOf("localhost") > -1) {
+     base = '/';
+}
 ////////////////////////////////
 ReactDOM.render(
      // development
      // <BrowserRouter basename='/'>
      //  deployed 
-     <BrowserRouter basename='/'>
+     <BrowserRouter basename={base}>
           <App />
      </BrowserRouter>,
      document.getElementById('root')
