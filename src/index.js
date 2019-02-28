@@ -13,7 +13,7 @@ import { BrowserRouter } from 'react-router-dom';
 // if (windowLocation.indexOf("localhost") > -1) {
      // base = '/';
 // }
-
+////////////////////////////////
 ReactDOM.render(
      // development
      // <BrowserRouter basename='/'>
@@ -23,7 +23,7 @@ ReactDOM.render(
      </BrowserRouter>,
      document.getElementById('root')
 )
-
+////////////////////////////////
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
