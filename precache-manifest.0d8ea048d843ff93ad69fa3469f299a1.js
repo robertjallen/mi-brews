@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/mi-brews/static/css/main.3e0b3349.chunk.css"
   },
   {
-    "revision": "dca5437a8ad9a5131a2d2a298f7f1f0e",
+    "revision": "47c192790a24961b3b3bc84050a4b11c",
     "url": "/mi-brews/index.html"
   }
 ];
